@@ -8,7 +8,7 @@ This document outlines the guidelines and step-by-step instructions for setting 
 
 ## 1. Repository Architecture
 
-This project is structured as a monorepo containing three core applications and shared tooling:
+This project is structured as a monorepo containing two core applications and shared tooling:
 
 
 ```
@@ -16,7 +16,6 @@ This project is structured as a monorepo containing three core applications and 
 .
 ├── backend/    # Core REST API (Java / Spring Boot)
 ├── clientapp/  # Public Web Application & Form Builder (Angular)
-├── adminapp/   # Admin & Analytics Dashboard (Flutter Cross-Platform)
 ├── docker/     # Local development services (PostgreSQL, Redis, Mailpit)
 ├── docs/       # Architecture Decision Records (ADRs) & API specifications
 └── Makefile    # Developer task automation runner
@@ -34,7 +33,6 @@ Before getting started, ensure you have the following installed on your machine:
 | **Docker Engine** | Docker & Compose | 24.0+ | Database & local services |
 | **Java SDK** | JDK OpenJDK / Temurin | 17+ / 21+ | `backend/` development |
 | **Node.js** | Node.js & npm | v18+ (LTS) | `clientapp/` development |
-| **Flutter SDK** | Flutter & Dart | 3.19+ (Stable) | `adminapp/` development |
 | **Make** | GNU Make | Pre-installed on Linux/macOS | Root command orchestration |
 
 ---
@@ -43,8 +41,8 @@ Before getting started, ensure you have the following installed on your machine:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone [https://github.com/your-org/your-repo.name.git](https://github.com/your-org/your-repo.name.git)
-cd your-repo-name
+git clone https://github.com/Atrst-development/FFOSS.git
+cd FFOSS
 
 ```
 
@@ -82,7 +80,6 @@ make dev-client
 ```
 
 * **Angular Web App:** `http://localhost:4200`
-
 
 ---
 
@@ -160,7 +157,6 @@ git push origin feat/add-form-analytics-chart
 4. **CI Checks:** Ensure all automated GitHub Actions checks pass:
 * `CI - Backend`
 * `CI - ClientApp`
-* `CI - AdminApp`
 
 
 5. **Code Review:** At least one maintainer review is required before merging.
@@ -169,7 +165,18 @@ git push origin feat/add-form-analytics-chart
 
 ## 7. Reporting Bugs & Requesting Features
 
-* **Found a Bug?** Open a [GitHub Issue](https://www.google.com/search?q=https://github.com/your-org/your-repo-name/issues) using the **Bug Report** template. Include reproduction steps, expected behavior, and environment details.
-* **Want a Feature?** Submit a [GitHub Issue](https://www.google.com/search?q=https://github.com/your-org/your-repo-name/issues) using the **Feature Request** template to discuss your proposal with maintainers before starting work.
+* **Found a Bug?** Open a [GitHub Issue](https://www.google.com/search?q=https://github.com/Atrst-development/FFOSS/issues) using the **Bug Report** template. Include reproduction steps, expected behavior, and environment details.
+* **Want a Feature?** Submit a [GitHub Issue](https://www.google.com/search?q=https://github.com/Atrst-development/FFOSS/issues) using the **Feature Request** template to discuss your proposal with maintainers before starting work.
 
 Thank you for helping us build an incredible open-source platform!
+
+```
+
+---
+
+<ElicitationsGroup message="What would you like to set up next?">
+  <Elicitation label="Draft updated Makefile for dev-db, dev-backend, dev-client" query="Draft the root Makefile matching this exact configuration without any Flutter commands."/>
+  <Elicitation label="Create GitHub Actions workflows for Spring Boot and Angular" query="Write the GitHub Actions CI workflows for building and testing backend (Spring Boot) and clientapp (Angular) on Pull Requests."/>
+</ElicitationsGroup>
+
+```
